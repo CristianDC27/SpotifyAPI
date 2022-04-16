@@ -41,7 +41,7 @@ $tasty-theme: mat.define-light-theme(
 //Colors used in Tasty
 $green-accent: #788d17;
 $green-accent-hover: #4a5710;
-$green-background: #e1eba3;
+$background: radial-gradient(57.28% 57.28% at 0% 0%, rgba(223, 223, 223, 0.2) 0%, rgba(176, 176, 176, 0) 100%),#2D2D2D;
 
 //Styles used in all the components
 * {
@@ -52,7 +52,7 @@ html,
 body {
   height: 100%;
   margin: 1em;
-  background-color: $green-background;
+  background: $background;
 }
 
 .mat-button {
@@ -82,7 +82,7 @@ body {
 
 /* Custom multiselect dropdown */
 
-$base-color: #788D17;
+$base-color: #414141;
 $disable-background-color: #eceeef;
 .multiselect-dropdown {
   position: relative;
