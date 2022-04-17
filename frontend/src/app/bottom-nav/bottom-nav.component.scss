@@ -1,0 +1,10 @@
+@use '~material-bottom-nav' as bottom-nav;
+
+.badges-nav {
+  @include bottom-nav.root(
+    $background-color: rgba(0, 0, 0, 0.75),
+    $active-color: white,
+    $inactive-color: grey,
+    $hide-inactive-labels: false
+  );
+}

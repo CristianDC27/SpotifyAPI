@@ -10,10 +10,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
+import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
+import { BackgroungLogoComponent } from './background-logo/background-logo.component';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
+import { MySpaceComponent } from './my-space/my-space.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    BottomNavComponent,
+    BackgroungLogoComponent,
+    HomeComponent,
+    SearchComponent,
+    MySpaceComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +37,6 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     ReactiveFormsModule,
     NgSelectModule,
     NgMultiSelectDropDownModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
