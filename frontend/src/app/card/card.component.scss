@@ -1,0 +1,31 @@
+.mat-card{
+  display: inline-block;
+  text-align: center;
+  background: #414141;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: fit-content;
+}
+
+.recipe-card-title{
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: medium;
+  color: white;
+  padding: 5px;
+}
+
+.recipe-card-img{
+  object-fit: cover;
+  width:160px;
+  height:160px;
+  border-radius: 3000px;
+}
+
+.mat-button {
+  padding: 0 15px 0 15px;
+  border-radius: 30px;
+  margin: 10px;
+}
