@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { MySpaceComponent } from './my-space/my-space.component';
 import { CardComponent } from './card/card.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { CardComponent } from './card/card.component';
   ],
   imports: [
     BrowserModule,
+    HttpClient,
+    HttpClientModule,
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
