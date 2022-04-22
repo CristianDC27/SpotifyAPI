@@ -1,7 +1,9 @@
+import { Image } from "./app/images";
 import { Track } from "./track";
 
 export interface Album {
-  id: number;
-  name: string;
+  id: String;
+  name: String;
+  images: [Image];
   tracks: [Track];
 }

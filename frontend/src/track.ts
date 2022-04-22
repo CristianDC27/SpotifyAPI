@@ -1,7 +1,12 @@
+import { Album } from "./album";
+
+export interface Tracks{
+  tracks: [Track];
+}
+
 export interface Track {
-  id: number;
+  id: String;
   name: String;
-  author: String;
-  album: String;
+  album: Album;
   popularity: number;
 }
