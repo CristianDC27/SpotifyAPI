@@ -14,3 +14,24 @@ h2{
   font-size: x-large;
   margin-bottom: -1%;
 }
+
+.list{
+  margin-bottom: 20px;
+}
+
+.scroller {
+  text-align: left;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar{
+  display: none;
+}
+
+.card {
+  display: inline-block;
+}

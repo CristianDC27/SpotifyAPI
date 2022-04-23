@@ -1,6 +1,10 @@
 <h1>Welcome!</h1>
 <br>
-<h2>Albums</h2>
-<li *ngFor="let album of albums">
-  <app-card [id]="album.id" [name]="album.name" [image]="album.images[0].url"></app-card>
-</li>
+<div class="list">
+  <h2>Albums</h2>
+  <div class="scroller">
+    <div class="card" *ngFor="let album of albums">
+      <app-card [id]="album.id" [name]="album.name" [image]="album.images[0].url"></app-card>
+    </div>
+  </div>
+</div>
