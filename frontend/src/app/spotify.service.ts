@@ -11,15 +11,15 @@ export class SpotifyService {
   httpOptions = {
     headers: new HttpHeaders(
       {
-        // https://accounts.spotify.com/authorize?response_type=token&client_id={CLIENT_ID}&redirect_uri=localhost:4200
-        'Authorization': 'Bearer BQBSBTHGyYNTDN4uBgvtRshaOigsrrVGU_raIjKBzV_G_p4N0ER5Z0wPfUksqi3dV0YpUFFqzkzXkwolslIDvlMJmgybQZV-I3AUnXcsKOPCii7eDifXo0GwCE8GmCctJ-R-dmz1Umhh',
+        // https://accounts.spotify.com/authorize?response_type=token&client_id={CLIENT_ID}&redirect_uri=http://localhost:4200/home
+        'Authorization': 'Bearer BQC9C_1rqdk81ypd49Pu5UVF0IzLthVZ-kdyJcGBnmFm8X6NQkN1htutaZIXEKc9RVLIQMqiIPkTOXiaZze4u3bP7GC5IAHMGw7bnudWaq3eRGOmPwwwDYw_wK3GE-1tm9txU3HHv35B',
         'Content-Type': 'application/json'
       })
   };
   constructor(private http: HttpClient) { }
 
-  getAlbums(limit: 10): Observable<Album[]> {
+  getAlbums(limit: 10): Observable<String> {
     // Testing here
-    return this.http.get<Album[]>(this.spotifyUrl +"browse/new-realeases/limit="+limit, this.httpOptions);
+    return this.http.get<String>(this.spotifyUrl +"browse/new-releases?limit="+limit, this.httpOptions);
   }
 }

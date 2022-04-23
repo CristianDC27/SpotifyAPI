@@ -2,5 +2,5 @@
 <br>
 <h2>Albums</h2>
 <li *ngFor="let album of albums">
-  <app-card></app-card>
+  <app-card [id]="album.id" [name]="album.name" [image]="album.images[0].url"></app-card>
 </li>
