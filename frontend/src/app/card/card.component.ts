@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.fullName = this.name;
-    if(this.name!.length > 20){
+    if(this.name!==undefined && this.name.length > 20){
       this.name = this.name?.substring(0,17)+"...";
     }
   }
