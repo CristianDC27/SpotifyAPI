@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from "@angular/material/icon";
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { SearchComponent } from './search/search.component';
 import { MySpaceComponent } from './my-space/my-space.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgMultiSelectDropDownModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
