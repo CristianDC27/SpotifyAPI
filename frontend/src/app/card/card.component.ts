@@ -6,17 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() image = "";
-  @Input() name =  "";
-  @Input() id :number | undefined;
-  fullName: String ="";
+  @Input() image?: String;
+  @Input() name?: String;
+  @Input() id?: String;
+  fullName?: String;
 
   constructor() { }
 
   ngOnInit(): void {
     this.fullName = this.name;
-    if(this.name.length > 20){
-      this.name = this.name.substring(0,17)+"...";
+    if(this.name!.length > 20){
+      this.name = this.name?.substring(0,17)+"...";
     }
   }
 
