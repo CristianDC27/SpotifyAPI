@@ -9,9 +9,16 @@ services:
     ports:
       - '5432:5432'
     volumes: 
-      - ./data:/data
+      - ./data:/var/lib/postgresql/data
     
   frontend:
     build: ./frontend
     ports:
       - "8080:80"
+  
+  backend:
+    build: ./backend
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
