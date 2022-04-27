@@ -1,0 +1,11 @@
+<div class="header" id="myHeader" (window:scroll)="fixed($event)">
+  <div class="titles">
+    <h1>Title</h1>
+    <h1>Album</h1>
+    <h1>Popularity</h1>
+  </div>
+  <hr>
+</div>
+<div *ngFor="let track of tracks; let number=index">
+  <app-track [track]="track" [number]="number"></app-track>
+</div>

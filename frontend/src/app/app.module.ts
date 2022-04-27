@@ -16,6 +16,9 @@ import { SearchComponent } from './search/search.component';
 import { MySpaceComponent } from './my-space/my-space.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './detail/detail.component';
+import { TrackListComponent } from './track-list/track-list.component';
+import { TrackComponent } from './track/track.component';
 
 
 
@@ -27,6 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     MySpaceComponent,
     CardComponent,
+    DetailComponent,
+    TrackListComponent,
+    TrackComponent,
   ],
   imports: [
     BrowserModule,
