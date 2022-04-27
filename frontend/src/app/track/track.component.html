@@ -1,0 +1,11 @@
+<div class="row" *ngIf="track">
+  <div class="title">
+    <h2>#{{number}}</h2>
+    <div class="img-container">
+      <img [src]="track.album.images[0]">
+    </div>
+    <h2>{{track.name}}</h2>
+  </div>
+  <h2>{{track.album.name}}</h2>
+  <h2>{{track.popularity}}</h2>
+</div>
