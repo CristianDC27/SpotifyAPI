@@ -10,10 +10,10 @@ import { SpotifyService } from '../spotify.service';
 })
 export class DetailComponent implements OnInit {
 
-  @Input() type?: String;
-  @Input() img?: String;
-  @Input() name?: String;
-  @Input() tracks?: Track[];
+  type?: String;
+  img?: String;
+  name?: String;
+  tracks?: Track[];
 
   location?: String;
 
@@ -32,7 +32,7 @@ export class DetailComponent implements OnInit {
       this.type = "Album";
       this.img = json.images[0].url;
       this.name = json.name;
-      this.tracks = json.tracks;
+      this.tracks = json.tracks.items;
     })
   }
 
