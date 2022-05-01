@@ -1,4 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { Track } from 'src/track';
 
 @Component({

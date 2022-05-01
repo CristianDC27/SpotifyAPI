@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Track } from 'src/track';
+import { SpotifyService } from '../spotify.service';
 
 @Component({
   selector: 'app-track',
@@ -8,12 +9,16 @@ import { Track } from 'src/track';
 })
 export class TrackComponent implements OnInit {
 
-  @Input() track?: Track;
+  track?: Track;
   @Input() number?: number;
+  @Input() id?: String
 
-  constructor() { }
+  constructor( private spotify: SpotifyService ) { }
 
   ngOnInit(): void {
+    this.spotify.getTrack(this.id!).subscribe( (track:any) => {
+      this.track=track;
+    });
   }
 
 }

@@ -8,5 +8,5 @@
 </div>
 
 <div *ngFor="let track of tracks; let number=index">
-  <app-track [track]="track" [number]="number"></app-track>
+  <app-track [id]="track.id" [number]="number+1"></app-track>
 </div>
