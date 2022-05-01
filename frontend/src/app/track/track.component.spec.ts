@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TrackComponent } from './track.component';
@@ -8,7 +9,8 @@ describe('TrackComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrackComponent ]
+      declarations: [ TrackComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   });
