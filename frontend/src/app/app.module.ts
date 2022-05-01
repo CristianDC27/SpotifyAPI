@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { TrackListComponent } from './track-list/track-list.component';
 import { TrackComponent } from './track/track.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -35,6 +36,7 @@ import { TrackComponent } from './track/track.component';
     TrackComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
