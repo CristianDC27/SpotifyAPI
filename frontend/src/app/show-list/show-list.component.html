@@ -1,0 +1,11 @@
+<div class="header" id="myHeader" (window:scroll)="fixed($event)">
+  <div class="titles">
+    <h1>Title</h1>
+    <h1>Release</h1>
+  </div>
+  <hr>
+</div>
+
+<div *ngFor="let episode of episodes; let number=index">
+  <app-show [episode]="episode" [number]="number+1"></app-show>
+</div>

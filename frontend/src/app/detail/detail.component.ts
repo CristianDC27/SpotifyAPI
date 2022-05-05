@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Episode } from 'src/episodes';
 import { Track } from 'src/track';
 import { SpotifyService } from '../spotify.service';
 
@@ -14,6 +15,7 @@ export class DetailComponent implements OnInit {
   img?: String;
   name?: String;
   tracks?: Track[];
+  episodes?: Episode[];
 
   location?: String;
 
@@ -25,6 +27,8 @@ export class DetailComponent implements OnInit {
         this.getAlbum(object[1].path);
       } else if (object[0].path === "artist") {
         this.getArtist(object[1].path);
+      } else if (object[0].path === "show") {
+        this.getShow(object[1].path);
       }
     })
   }
@@ -49,4 +53,12 @@ export class DetailComponent implements OnInit {
     })
   }
 
+  getShow(id: String): void {
+    this.spotify.getShowEpisodes(id).subscribe( (json:any) =>{
+      this.type = "Show";
+      this.img = json.images[0].url;
+      this.name = json.name;
+      this.episodes = json.episodes.items;
+    })
+  }
 }

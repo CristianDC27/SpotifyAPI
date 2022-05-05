@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Album } from 'src/album';
 import { Artist } from 'src/artist';
+import { Show } from 'src/show';
 import { SpotifyService } from '../spotify.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { SpotifyService } from '../spotify.service';
 export class HomeComponent implements OnInit {
   albums?: Album[];
   artists?: Artist[];
+  shows?: Show[];
 
   opts = {
     slidesPerView: 2.4,
@@ -24,6 +26,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAlbums();
     this.getArtists();
+    this.getShows();
   }
 
   getAlbums(): void {
@@ -34,4 +37,7 @@ export class HomeComponent implements OnInit {
     this.spotifyService.getArtists(10).subscribe( (json:any) => this.artists = json.artists.items )
   }
 
+  getShows(): void {
+    this.spotifyService.getShows(10).subscribe( (json:any) => this.shows = json.shows.items );
+  }
 }
