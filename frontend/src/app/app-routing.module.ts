@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'search', component: SearchComponent},
   { path: 'myspace', component: MySpaceComponent},
-  { path: 'album/:id', component: DetailComponent}
+  { path: 'album/:id', component: DetailComponent},
+  { path: 'artist/:id', component: DetailComponent}
 
 ];
 
