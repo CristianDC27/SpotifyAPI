@@ -13,7 +13,7 @@ export class SpotifyService {
     headers: new HttpHeaders(
       {
         // https://accounts.spotify.com/authorize?response_type=token&client_id={CLIENT_ID}&redirect_uri=http://localhost:4200/home
-        'Authorization': 'Bearer BQDoKktHjKXFO4evRDvs_cNajR8JEvJtYC58-tAzENGG0paGgBapcx6GoOF3zuLfTfYQH9zPUVSyz9ILmOJ3vPWJJXaoMTWdR_jnRojpDu0j_2D7_7ywMPuqYRsVIYedEKJneweI0TtR',
+        'Authorization': 'Bearer BQCZt7gArHPAyulaYRwrKm6xk5DaKxcwFttBTFqmbPu98M0vrFUCt6_k9waMWIL1Ig9GGQePWtIq6-0juB8J2fs9eypSFnMcT9e2JAosRe3DTguDtDNQJamcTLadXAI4gGgv1QRnG67q',
         'Content-Type': 'application/json'
       })
   };
@@ -40,5 +40,13 @@ export class SpotifyService {
 
   getArtistTracks(id: String): Observable<String> {
     return this.http.get<String>(this.spotifyUrl + "artists/" + id + "/top-tracks?market=ES", this.httpOptions);
+  }
+
+  getShows(limit: 10): Observable<String> {
+    return this.http.get<String>(this.spotifyUrl + "search?q=shows&type=show&limit="+limit, this.httpOptions);
+  }
+
+  getShowEpisodes(id: String): Observable<String> {
+    return this.http.get<String>(this.spotifyUrl + "shows/" + id, this.httpOptions);
   }
 }

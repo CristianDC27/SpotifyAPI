@@ -20,6 +20,8 @@ import { DetailComponent } from './detail/detail.component';
 import { TrackListComponent } from './track-list/track-list.component';
 import { TrackComponent } from './track/track.component';
 import { RouterModule } from '@angular/router';
+import { ShowListComponent } from './show-list/show-list.component';
+import { ShowComponent } from './show/show.component';
 
 
 
@@ -34,6 +36,8 @@ import { RouterModule } from '@angular/router';
     DetailComponent,
     TrackListComponent,
     TrackComponent,
+    ShowListComponent,
+    ShowComponent,
   ],
   imports: [
     RouterModule,

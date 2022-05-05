@@ -1,0 +1,10 @@
+<div class="row" *ngIf="episode">
+  <div class="title">
+    <h2>#{{number}}</h2>
+    <div class="img-container">
+      <img [src]="episode.images[0]!.url">
+    </div>
+    <h2>{{name}}</h2>
+  </div>
+  <h2>{{episode.release_date}}</h2>
+</div>

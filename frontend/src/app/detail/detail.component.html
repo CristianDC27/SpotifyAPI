@@ -7,4 +7,5 @@
     <h1>{{name}}</h1>
   </div>
 </div>
-<app-track-list [tracks]="tracks"></app-track-list>
+<app-track-list *ngIf="tracks!=undefined" [tracks]="tracks"></app-track-list>
+<app-show-list *ngIf="episodes!=undefined" [episodes]="episodes"></app-show-list>
