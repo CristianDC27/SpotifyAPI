@@ -21,8 +21,10 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.url.subscribe( (object: any) => {
-      if(object[0].path === "album") {
+      if (object[0].path === "album") {
         this.getAlbum(object[1].path);
+      } else if (object[0].path === "artist") {
+        this.getArtist(object[1].path);
       }
     })
   }
@@ -33,6 +35,17 @@ export class DetailComponent implements OnInit {
       this.img = json.images[0].url;
       this.name = json.name;
       this.tracks = json.tracks.items;
+    })
+  }
+
+  getArtist(id: String): void {
+    this.spotify.getArtist(id).subscribe( artist => {
+      this.type = "Artist";
+      this.img =artist.images[0].url;
+      this.name = artist.name;
+    })
+    this.spotify.getArtistTracks(id).subscribe( (json:any) => {
+      this.tracks = json.tracks;
     })
   }
 

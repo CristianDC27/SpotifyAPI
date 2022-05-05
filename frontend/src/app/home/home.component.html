@@ -10,3 +10,14 @@
     </div>
   </div>
 </div>
+
+<div class="list">
+  <h2>Artists</h2>
+  <div class="scroller">
+    <div class="card" *ngFor="let artist of artists">
+      <a routerLink="/artist/{{artist.id}}">
+        <app-card [id]="artist.id" [name]="artist.name" [image]="artist.images[0]?.url"></app-card>
+      </a>
+    </div>
+  </div>
+</div>
