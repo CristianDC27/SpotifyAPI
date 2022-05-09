@@ -41,4 +41,4 @@ modules/.vscode
 *.vsix
 
 ## Postgresql data folder
-/data
+.data/*

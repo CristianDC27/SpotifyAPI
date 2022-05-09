@@ -14,6 +14,9 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if(this.image==undefined){
+      this.image = "https://blog.landr.com/wp-content/uploads/2017/09/Format-Vinyl-Records-inpost.jpg";
+    }
     this.fullName = this.name;
     if(this.name!==undefined && this.name.length > 15){
       this.name = this.name?.substring(0,11)+"...";

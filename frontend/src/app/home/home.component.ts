@@ -13,13 +13,13 @@ export class HomeComponent implements OnInit {
   albums?: Album[];
   artists?: Artist[];
   shows?: Show[];
-
+/*
   opts = {
     slidesPerView: 2.4,
     slidesOffsetBefore: 20,
     spaceBetween: 20,
     freeMode: true
-  };
+  }; */
 
   constructor(private spotifyService: SpotifyService) { }
 
