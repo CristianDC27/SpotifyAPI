@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Episode } from 'src/episodes';
 import { Track } from 'src/track';
+import { BackendService } from '../backend.service';
 import { SpotifyService } from '../spotify.service';
 
 @Component({
@@ -12,14 +13,18 @@ import { SpotifyService } from '../spotify.service';
 export class DetailComponent implements OnInit {
 
   type?: String;
-  img?: String;
+  img?: String = "https://blog.landr.com/wp-content/uploads/2017/09/Format-Vinyl-Records-inpost.jpg";
   name?: String;
   tracks?: Track[];
   episodes?: Episode[];
 
   location?: String;
 
-  constructor( private route: ActivatedRoute, private spotify: SpotifyService ) { }
+  constructor(
+    private route: ActivatedRoute,
+    private spotify: SpotifyService,
+    private backend: BackendService
+  ) { }
 
   ngOnInit(): void {
     this.route.url.subscribe( (object: any) => {
@@ -29,6 +34,8 @@ export class DetailComponent implements OnInit {
         this.getArtist(object[1].path);
       } else if (object[0].path === "show") {
         this.getShow(object[1].path);
+      } else if (object[0].path === "myspace") {
+        this.getSavedTracks();
       }
     })
   }
@@ -59,6 +66,21 @@ export class DetailComponent implements OnInit {
       this.img = json.images[0].url;
       this.name = json.name;
       this.episodes = json.episodes.items;
+    })
+  }
+
+  getSavedTracks(): void {
+    this.type = "Playlist";
+    this.name = "My Space";
+    this.backend.getSavedTracks().subscribe( tracks => {
+      var ids = "";
+      for (let track of tracks) {
+        ids = track.id +",";
+      }
+      this.spotify.getTrack(ids.substring(0,ids.length-1)).subscribe((json:any) => {
+        this.tracks = json.tracks;
+        this.img = json.tracks[0].images[0].url;
+      });
     })
   }
 }
