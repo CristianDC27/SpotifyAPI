@@ -19,6 +19,7 @@ export class DetailComponent implements OnInit {
   episodes?: Episode[];
 
   location?: String;
+  add: Boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,7 @@ export class DetailComponent implements OnInit {
       } else if (object[0].path === "show") {
         this.getShow(object[1].path);
       } else if (object[0].path === "myspace") {
+        this.add = false;
         this.getSavedTracks();
       }
     })
@@ -73,13 +75,14 @@ export class DetailComponent implements OnInit {
     this.type = "Playlist";
     this.name = "My Space";
     this.backend.getSavedTracks().subscribe( tracks => {
-      var ids = "";
+      var idsString = "";
       for (let track of tracks) {
-        ids = track.id +",";
+        idsString += track.id +",";
       }
-      this.spotify.getTrack(ids.substring(0,ids.length-1)).subscribe((json:any) => {
+      console.log(idsString);
+      this.spotify.getTracks(idsString.substring(0,idsString.length-1)).subscribe((json:any) => {
         this.tracks = json.tracks;
-        this.img = json.tracks[0].images[0].url;
+        this.img = json.tracks[0].album.images[0].url;
       });
     })
   }

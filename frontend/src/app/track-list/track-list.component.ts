@@ -11,6 +11,7 @@ export class TrackListComponent implements OnInit {
   header?: HTMLElement;
   sticky?: number;
   @Input() tracks?: Track[];
+  @Input() add?: Boolean;
 
   constructor() { }
 
