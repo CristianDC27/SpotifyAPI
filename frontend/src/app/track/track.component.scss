@@ -9,6 +9,19 @@
   );
 }
 
+.save, .remove {
+  cursor: pointer;
+  :hover {
+    color:red;
+  }
+}
+
+.save {
+  :hover {
+    color:green;
+  }
+}
+
 h2 {
   margin: 0 auto;
   color: white;
