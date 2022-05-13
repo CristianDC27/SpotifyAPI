@@ -28,15 +28,13 @@ export class TrackComponent implements OnInit {
 
   save(): void {
     if (this.track) {
-      console.log("click guardar");
-      this.backend.save(this.track);
+      this.backend.save(this.track).subscribe();
     }
   }
 
   remove(): void {
     if (this.track) {
-      console.log("click borrar");
-      this.backend.remove(this.track);
+      this.backend.remove(this.track).subscribe( () => window.location.reload());
     }
   }
 }

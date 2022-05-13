@@ -18,11 +18,11 @@ export class BackendService {
     return this.http.get<Track[]>(this.tracksUrl);
   }
 
-  save(track: Track): void {
-    this.http.post<Track>(this.tracksUrl, track, this.httpOptions);
+  save(track: Track): Observable<Track>  {
+    return this.http.post<Track>(this.tracksUrl, track, this.httpOptions);
   }
 
-  remove(track: Track): void {
-    this.http.delete<Track>(this.tracksUrl+"/"+track.id, this.httpOptions);
+  remove(track: Track): Observable<Track> {
+    return this.http.delete<Track>(this.tracksUrl+"/"+track.id, this.httpOptions);
   }
 }
