@@ -32,3 +32,14 @@
     </div>
   </div>
 </div>
+
+<div class="list">
+  <h2>Events</h2>
+  <div class="scroller">
+    <div class="card" *ngFor="let event of events">
+      <a href="{{event.url}}">
+        <app-card [name]="event.event" [image]="event.image"></app-card>
+      </a>
+    </div>
+  </div>
+</div>
