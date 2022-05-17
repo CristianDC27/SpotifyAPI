@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Album } from 'src/album';
 import { Artist } from 'src/artist';
+import { Event } from 'src/event';
 import { Show } from 'src/show';
+import { ScrapService } from '../scrap.service';
 import { SpotifyService } from '../spotify.service';
 
 @Component({
@@ -13,20 +15,18 @@ export class HomeComponent implements OnInit {
   albums?: Album[];
   artists?: Artist[];
   shows?: Show[];
-/*
-  opts = {
-    slidesPerView: 2.4,
-    slidesOffsetBefore: 20,
-    spaceBetween: 20,
-    freeMode: true
-  }; */
+  events?: Event[];
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(
+    private spotifyService: SpotifyService,
+    private scrapService: ScrapService
+  ) { }
 
   ngOnInit(): void {
     this.getAlbums();
     this.getArtists();
     this.getShows();
+    this.getEvents();
   }
 
   getAlbums(): void {
@@ -39,5 +39,9 @@ export class HomeComponent implements OnInit {
 
   getShows(): void {
     this.spotifyService.getShows(10).subscribe( (json:any) => this.shows = json.shows.items );
+  }
+
+  getEvents(): void {
+    this.scrapService.getEvents().subscribe( events => this.events = events );
   }
 }
