@@ -9,7 +9,10 @@ import { Event } from 'src/event';
 export class ScrapService {
   private tracksUrl = 'http://localhost:8081/api/events/data';  // URL to web api
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    })
   };
 
   constructor( private http: HttpClient ) { }

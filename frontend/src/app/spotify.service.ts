@@ -13,7 +13,7 @@ export class SpotifyService {
     headers: new HttpHeaders(
       {
         // https://accounts.spotify.com/authorize?response_type=token&client_id={CLIENT_ID}&redirect_uri=http://localhost:4200/home
-        'Authorization': 'Bearer BQBG_PHx52y8t2BkY70HqmahGQN-F3MBQBPPMgfw5-lLIDtXtfPz22Jl0OqJDLC5Py9g5P-ocQua1aYGa6C8Aq84fZ1dGH0Cca2GCLahO9UqrH8J1rPpWZuwf_WwsTyUD3EEOJUgfeCl',
+        'Authorization': 'Bearer BQCBQBD_jqYKAJLDFZSW1sNn1RYSsqHFhe4cPxea-2B3hM1C5pyioIm659DiLeb09fyDRxAYLdREOMTDbr_42VL_mUdW4_HsWLXkeSFa6oLT1mb7p38kTJJDD7EprignZEUjo2xm7uat',
         'Content-Type': 'application/json'
       })
   };
