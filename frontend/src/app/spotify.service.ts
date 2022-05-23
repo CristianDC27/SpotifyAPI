@@ -13,7 +13,7 @@ export class SpotifyService {
     headers: new HttpHeaders(
       {
         // https://accounts.spotify.com/authorize?response_type=token&client_id={CLIENT_ID}&redirect_uri=http://localhost:4200/home
-        'Authorization': 'Bearer BQCBQBD_jqYKAJLDFZSW1sNn1RYSsqHFhe4cPxea-2B3hM1C5pyioIm659DiLeb09fyDRxAYLdREOMTDbr_42VL_mUdW4_HsWLXkeSFa6oLT1mb7p38kTJJDD7EprignZEUjo2xm7uat',
+        'Authorization': 'Bearer BQCbZoHNZzkRSsJmTxgHqmb9OQUuTDHw9-1dukJq45fUdrSHs6HwfZ9s4RGRZUvbe9bNfY7HwoWpBWRYByqCCjqwLXn281SRyK5eKGm1Agz1XhNMaHPc50QHhlFPBFPYF3dBmHC0wQyb',
         'Content-Type': 'application/json'
       })
   };
@@ -52,5 +52,9 @@ export class SpotifyService {
 
   getShowEpisodes(id: String): Observable<String> {
     return this.http.get<String>(this.spotifyUrl + "shows/" + id, this.httpOptions);
+  }
+
+  getSearch(limit: 10, value: String): Observable<String> {
+    return this.http.get<String>(this.spotifyUrl + "search?q="+value+"&type=track%2Cartist%2Calbum%2Cshow&market=ES&limit="+limit+"&offset=5", this.httpOptions);
   }
 }

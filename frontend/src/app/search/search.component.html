@@ -1,1 +1,41 @@
-<p>search works!</p>
+<div class="search-bar">
+  <input type="text" placeholder="Search recipe" #search (keydown.enter)="onSearch(search.value)">
+  <div class="search-button" (click)="onSearch(search.value)">
+    <mat-icon class="white">search</mat-icon>
+  </div>
+</div>
+
+<div class="list" *ngIf="albums!=undefined">
+  <h2>Albums</h2>
+  <div class="scroller">
+    <div class="card" *ngFor="let album of albums">
+      <a routerLink="/album/{{album.id}}">
+        <app-card [id]="album.id" [name]="album.name" [image]="album.images[0].url"></app-card>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="list" *ngIf="artists!=undefined">
+  <h2>Artists</h2>
+  <div class="scroller">
+    <div class="card" *ngFor="let artist of artists">
+      <a routerLink="/artist/{{artist.id}}">
+        <app-card [id]="artist.id" [name]="artist.name" [image]="artist.images[0]?.url"></app-card>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="list" *ngIf="shows!=undefined">
+  <h2>Shows</h2>
+  <div class="scroller">
+    <div class="card" *ngFor="let show of shows">
+      <a routerLink="/show/{{show.id}}">
+        <app-card [id]="show.id" [name]="show.name" [image]="show.images[0]?.url"></app-card>
+      </a>
+    </div>
+  </div>
+</div>
+
+<app-track-list *ngIf="tracks!=undefined" [tracks]="tracks" [add]="true"></app-track-list>
