@@ -66,6 +66,10 @@ h2{
 
 .list{
   margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur( 4px );
+  padding-top: 8px;
+  border-radius: 20px;
 }
 
 .scroller {

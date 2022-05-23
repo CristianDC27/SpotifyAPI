@@ -10,6 +10,6 @@
 <div *ngIf="tracks == undefined || tracks.length==0">
   <h1>Ups, no tracks yet</h1>
 </div>
-<div *ngFor="let track of tracks; let number=index">
-  <app-track [id]="track.id" [number]="number+1" [add]="add" (refresh)="onRefresh()"></app-track>
+<div class="list">
+  <app-track *ngFor="let track of tracks; let number=index" [id]="track.id" [number]="number+1" [add]="add" (refresh)="onRefresh()"></app-track>
 </div>
