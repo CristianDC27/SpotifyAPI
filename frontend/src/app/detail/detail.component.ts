@@ -79,7 +79,10 @@ export class DetailComponent implements OnInit {
       for (let track of tracks) {
         idsString += track.id +",";
       }
-      console.log(idsString);
+      if(idsString=="") {
+        this.tracks = undefined;
+        return;
+      }
       this.spotify.getTracks(idsString.substring(0,idsString.length-1)).subscribe((json:any) => {
         this.tracks = json.tracks;
         this.img = json.tracks[0].album.images[0].url;

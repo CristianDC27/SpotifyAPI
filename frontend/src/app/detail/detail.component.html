@@ -7,5 +7,5 @@
     <h1>{{name}}</h1>
   </div>
 </div>
-<app-track-list *ngIf="episodes==undefined" [tracks]="tracks" [add]="add"></app-track-list>
+<app-track-list *ngIf="episodes==undefined" [tracks]="tracks" [add]="add" (refresh)="getSavedTracks()"></app-track-list>
 <app-show-list *ngIf="episodes!=undefined" [episodes]="episodes"></app-show-list>
