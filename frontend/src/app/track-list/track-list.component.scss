@@ -4,16 +4,21 @@ h1 {
   font-family: 'Inter';
 }
 
+hr {
+  margin:0;
+}
+
 .titles {
-  margin-top: 2%;
   width: 100%;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
 }
 
-.header {
+.header, .list {
   background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur( 4px );
+  position: relative;
 }
 
 .sticky {
@@ -23,6 +28,7 @@ h1 {
   .titles {
     background-color: rgba(0, 0, 0, 1);
   }
+  z-index: 99;
 }
 
 .content {
