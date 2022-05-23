@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { waitForAsync } from '@angular/core/testing';
 import { Track } from 'src/track';
 
@@ -12,6 +12,7 @@ export class TrackListComponent implements OnInit {
   sticky?: number;
   @Input() tracks?: Track[];
   @Input() add?: Boolean;
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
 
   constructor() { }
 
@@ -27,5 +28,9 @@ export class TrackListComponent implements OnInit {
     } else {
       this.header?.classList.remove("sticky");
     }
+  }
+
+  onRefresh() {
+    this.refresh.emit();
   }
 }

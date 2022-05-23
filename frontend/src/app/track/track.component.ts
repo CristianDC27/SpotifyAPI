@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Track } from 'src/track';
 import { BackendService } from '../backend.service';
 import { SpotifyService } from '../spotify.service';
@@ -14,6 +14,7 @@ export class TrackComponent implements OnInit {
   @Input() number?: number;
   @Input() id?: String;
   @Input() add?: Boolean;
+  @Output() refresh: EventEmitter<String> = new EventEmitter();
 
   constructor(
     private spotify: SpotifyService,
@@ -34,7 +35,7 @@ export class TrackComponent implements OnInit {
 
   remove(): void {
     if (this.track) {
-      this.backend.remove(this.track).subscribe( () => window.location.reload());
+      this.backend.remove(this.track).subscribe( () => this.refresh.emit());
     }
   }
 }
