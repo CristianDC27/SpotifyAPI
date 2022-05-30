@@ -23,16 +23,16 @@ jobs:
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
       - name: Adding Known Hosts
         run: ssh-keyscan -H 34.123.248.52 >> ~/.ssh/known_hosts
-      - uses: actions/checkout@v2
-      # Runs a single command using the runners shell
-      - name: Connection
-        run: ssh -tt cc002@34.123.248.52
-      - name: Workdir
-        run: cd SpotifyAPI
-      - name: Update
-        run: git pull -r origin main
-      - name: Build
-        run: docker-compose build
-      - name: Run
-        run: docker-compose up -d
+      - name: multiple command
+        uses: appleboy/ssh-action@master
+        with:
+          host: "34.123.248.52"
+          username: "cc002"
+          key: ${{ secrets.DEPLOY }}
+          port: "22"
+          script:
+            cd SpotifyAPI
+            git pull -r origin main
+            docker-compose build
+            docker-compose up -d
   
