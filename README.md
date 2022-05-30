@@ -2,10 +2,36 @@
 
 Collective project where the knowledge acquired in the subject will be put into practice, taking as an example Spotify API to query data about albums, artists, tracks, etc… - Rapid Application Development 2022 UAL
 
-<img src="screenshot/SpotifyAPI.PNG">
+## Architecture
+
+This project's frontend is built using Angular from where the request to the [API](https://developer.spotify.com/documentation/web-api/) are made. The backend is built using Spring Boot which communicate with the PostgreSQL data base.
+<img src="screenshot/achitecture.PNG" style="center">
+
+In the data base we only save the Track id, the same id that the API use:
+<img src="screenshot/Track.PNG" style="center">
+
+To communicate front with back, we used HTTP requests to the created endpoints of the backend:
+
+### Get
+
+It returns the list of all the Tracks that the data base have.
+
+### Get(id: String)
+
+It returns a Track by its id.
+
+### Post(track: Track)
+
+It saves the track in the data base.
+
+### Delete(id: String)
+
+It removes a track from the data base by its id.
+
+Using the same backend, we have a endpoint to return the events of the year in Spain.
 
 ## Developer
-|Cristian David Casado|[https://github.com/CristianDC27](https://github.com/CristianDC27)|
+Cristian David Casado [https://github.com/CristianDC27](https://github.com/CristianDC27)
 
 ## License
 [![](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
