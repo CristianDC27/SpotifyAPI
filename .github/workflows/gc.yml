@@ -30,7 +30,7 @@ jobs:
           username: "cc002"
           key: ${{ secrets.DEPLOY }}
           port: "22"
-          script:
+          script: |
             cd SpotifyAPI
             git pull -r origin main
             docker-compose build
