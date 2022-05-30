@@ -5,10 +5,10 @@ Collective project where the knowledge acquired in the subject will be put into 
 ## Architecture
 
 This project's frontend is built using Angular from where the request to the [API](https://developer.spotify.com/documentation/web-api/) are made. The backend is built using Spring Boot which communicate with the PostgreSQL data base.
-<img src="screenshot/architecture.png" style="center">
+<img src="screenshot/architecture.png">
 
 In the data base we only save the Track id, the same id that the API use:
-<img src="screenshot/Track.png" style="center">
+<img src="screenshot/Track.png">
 
 To communicate front with back, we used HTTP requests to the created endpoints of the backend:
 
