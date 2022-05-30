@@ -13,4 +13,19 @@ on:
 
 jobs:
   deploy:
+    name: Push to Google Cloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: Connection
+        run: ssh -i $ {{ secrets.DEPLOY }} 34.123.248.52
+      - name: Workdir
+        run: cd SpotifyAPI
+      - name: Update
+        run: git pull -r origin main
+      - name: Build
+        run: docker-compose build
+      - name: Run
+        run: docker-compose up -d
   
