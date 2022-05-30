@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
       - name: Connection
-        run: ssh -i $ {{ secrets.DEPLOY }} 34.123.248.52
+        run: ssh -i ${{ secrets.DEPLOY }} 34.123.248.52
       - name: Workdir
         run: cd SpotifyAPI
       - name: Update
