@@ -33,6 +33,6 @@ jobs:
           script: |
             cd SpotifyAPI
             git pull -r origin main
-            docker-compose build
+            DOCKER_BUILDKIT=0 docker-compose build
             docker-compose up -d
   
